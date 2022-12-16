@@ -33,7 +33,7 @@ public class CameraFollow : MonoBehaviour
         {
             transform.position = Vector3.Slerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + camHeight, player.transform.position.z), followSpeed * Time.deltaTime); 
         }
-        if(transform.position.y < player.transform.position.y)
+        if(transform.position.y < player.transform.position.y && !Input.GetKey("w"))
         {
             transform.position += new Vector3(0, 2, 0) * Time.deltaTime;
         }
