@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1472330001}
   offSet: 6
-  camHeight: -6
+  camHeight: 1
   followSpeed: 1
 --- !u!1 &1126594465
 GameObject:

@@ -31,8 +31,13 @@ public class CameraFollow : MonoBehaviour
 
         if(Vector3.Distance(transform.position, player.transform.position) > offSet)
         {
-            transform.position = Vector3.Slerp(transform.position, new Vector3(player.transform.position.x, camHeight, player.transform.position.z), followSpeed * Time.deltaTime); 
+            transform.position = Vector3.Slerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + camHeight, player.transform.position.z), followSpeed * Time.deltaTime); 
         }
+        if(transform.position.y < player.transform.position.y)
+        {
+            transform.position += new Vector3(0, 2, 0) * Time.deltaTime;
+        }
+        
 
         //transform.position = Vector3.Slerp(transform.position, player.transform.forward + offSet, followSpeed * Time.deltaTime) ;
     }
