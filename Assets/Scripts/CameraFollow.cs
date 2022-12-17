@@ -19,6 +19,9 @@ public class CameraFollow : MonoBehaviour
     //float for the camera follow speed
     [SerializeField] float followSpeed;
 
+    //float for the camera rotation speed
+    [SerializeField] float rotateSpeed;
+
     void Start()
     {
         
@@ -36,6 +39,14 @@ public class CameraFollow : MonoBehaviour
         if(transform.position.y < player.transform.position.y && !Input.GetKey("w"))
         {
             transform.position += new Vector3(0, 2, 0) * Time.deltaTime;
+        }
+        if (Input.GetKey("e"))
+        {
+            transform.RotateAround(player.transform.position, Vector3.up, -rotateSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey("q"))
+        {
+            transform.RotateAround(player.transform.position, Vector3.up, rotateSpeed * Time.deltaTime);
         }
         
 

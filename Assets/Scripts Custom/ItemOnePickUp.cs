@@ -16,7 +16,7 @@ public class ItemOnePickUp : MonoBehaviour
 
     private void Update()
     {
-        if (promptSprite.activeInHierarchy && Input.GetKeyDown("e"))
+        if (promptSprite.activeInHierarchy && Input.GetKeyDown("f"))
         {
             globalVariables.itemOne = globalVariables.itemOne + 1;
             audioScource.clip = soundFX;
